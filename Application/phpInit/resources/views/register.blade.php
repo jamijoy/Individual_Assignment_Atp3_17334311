@@ -22,7 +22,7 @@
 			</tr>
 			<tr>
 				<td>Password</td>
-				<td><input type="password" name="pass" value="{{old('pass')}}"></td>
+				<td><input type="password" name="password" value="{{old('pass')}}"></td>
 			</tr>
 			<tr>
 				<td></td>

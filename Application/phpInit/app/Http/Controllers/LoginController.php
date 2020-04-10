@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\User;
 
-use validator;
+use Validator;
 
 class LoginController extends Controller
 {
@@ -39,36 +39,56 @@ class LoginController extends Controller
 	
 	public function registerCheck(Request $req){
     	
-		$validation = $this->validate($req, [
-			'email'=>'bail|required|unique:users',
+		// $validation = $this->validate($req, [
+			// 'email'=>'required|unique:users',
+			// 'password'=>'required',
+			// 'name'=>'required'
+		// ]);
+		
+		$Validation = Validator::make($req->all(), [
+			'email'=>'required|unique:users',
 			'password'=>'required',
 			'name'=>'required'
 		]);
 		
 		// $validation->validate();
 
-		if($validation->fails()){
+		if($Validation->fails()){
 			return back()
-					->with('errors', $validation->errors())
+					->with('errors', $Validation->errors())
 					->withInput();
 
-			return redirect()->route('login.registerCheck')
-							->with('errors', $validation->errors())
-							->withInput();		
+			// return redirect()->route('login.registerCheck')
+							// ->with('errors', $validation->errors())
+							// ->withInput();		
 		}
 
-		$user 			= new User;
-		$user->name 	= $req->name;
-		$user->email    = $req->email;
-		$user->password = $req->pass;
-		$user->type 	= "manager";
-		$user->userId 	= 3;
+		// $user 			= new User;
+		// $user->name 	= $req->name;
+		// $user->email    = $req->email;
+		// $user->password = $req->pass;
+		// $user->type 	= "manager";
+		// $user->userId 	= 3;
 		
-		if($user->save()){
-			//return redirect()->route('home.list');
-			return view('welcome');
-		}else{
-			return redirect()->route('login.register');
+		$resp = DB::table('users')->insert([
+		'name'     => $req->name,
+		'email'    => $req->email,
+		'password' => $req->password,
+		'type' 	   => "manager",
+		'userId'   => null
+		]);
+		
+		if(!$resp)
+		{
+			$req->session()->flash('msg', 'Registration Failed');
+    		return redirect('/login');
 		}
+		else
+		{
+			$req->session()->flash('msg', 'Registered Account');
+    		return redirect('/login');
+		}
+		
+		
     }
 }
