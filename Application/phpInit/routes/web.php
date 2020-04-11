@@ -28,3 +28,5 @@ Route::post('/system/busesshedule/{id}/edit','BusesScheduleController@EditSave')
 Route::get('/system/busesshedule/{id}/Delete','BusesScheduleController@Delete')->name('BusesSchedule.Delete');
 
 Route::get('/system/profile/{id}/profile','ProfileController@index')->name('Profile.index');
+Route::get('/system/profile/{id}/edit','ProfileController@Edit')->name('Profile.Edit');
+Route::post('/system/profile/{id}/edit','ProfileController@EditSave')->name('Profile.EditSave');

@@ -4,7 +4,6 @@
 	<title>Pofile Page</title>
 </head>
 <body>	
-{{csrf_field()}}
 	<h1>Bus Schedules</h1>
 	<a href="{{route('home.index')}}">back</a> |
 	<a href="/logout">Logout</a> 

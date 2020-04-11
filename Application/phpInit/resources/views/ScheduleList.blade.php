@@ -9,13 +9,18 @@
 	{
 		if (confirm("Delete This Bus Schedule ? \nSure Sir ?\n")) {
 			
-			header('location:/home');
-			// window.location.replace("localhost:3000/login");
-			// window.location.href = "/home";
+			// header('location:/home');
+			// window.location.replace("localhost:3000/home");
+			window.location.href = "/home";
 			
 		  } else {
 			window.location.replace("localhost:3000/home");
 		  }
+	}
+	
+	function del2Func()
+	{
+		window.location.href = "/home";
 	}
 </script>
 
@@ -50,7 +55,8 @@
 			<td>{{$arr->arrival}}</td>
 			<td>
 				<a href="/system/busesshedule/{{$arr->id}}/edit">Edit</a> || 
-				<a href="/system/busesshedule/{{$arr->id}}/Delete"">Delete</a>
+				<a href="/system/busesshedule/{{$arr->id}}/Delete">Delete</a> ||
+				<a onclick="del2Func()" href="">Delete button</a>
 			</td>
 		</tr>
 		@endforeach
