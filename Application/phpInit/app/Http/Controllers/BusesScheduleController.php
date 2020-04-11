@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
 use Validator;
+
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
@@ -18,6 +19,16 @@ class BusesScheduleController extends Controller
 	
 		$data = DB::table('busesschedule')->where('id', $id)->first();
 		return view('EditSchedule', ['data'=>$data]);
+	}
+	
+	public function Delete($id){
+	
+		$data = DB::table('busesschedule')
+					->where('id', $id)
+					->delete();
+					
+		return redirect()->route('BusesSchedule.index');
+		// return view('welcome');
 	}
 	
 	public function EditSave($id, Request $req){

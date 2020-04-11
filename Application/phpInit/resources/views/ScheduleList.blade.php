@@ -3,6 +3,22 @@
 <head>
 	<title>Bus Schedule Page</title>
 </head>
+
+<script>
+	function delFunc()
+	{
+		if (confirm("Delete This Bus Schedule ? \nSure Sir ?\n")) {
+			
+			header('location:/home');
+			// window.location.replace("localhost:3000/login");
+			// window.location.href = "/home";
+			
+		  } else {
+			window.location.replace("localhost:3000/home");
+		  }
+	}
+</script>
+
 <body>	
 
 	<h1>Bus Schedules</h1>
@@ -34,13 +50,17 @@
 			<td>{{$arr->arrival}}</td>
 			<td>
 				<a href="/system/busesshedule/{{$arr->id}}/edit">Edit</a> || 
-				<a href="/system/busesshedule/{{$arr->id}}/delete">Delete</a>
+				<a href="/system/busesshedule/{{$arr->id}}/Delete"">Delete</a>
 			</td>
 		</tr>
 		@endforeach
 	</table>
 	
-	
+	<div id="delDiv">
+		<p>Are you sure want to delete this ?
+		</p>
+		
+	</div>
 
 </body>
 </html>

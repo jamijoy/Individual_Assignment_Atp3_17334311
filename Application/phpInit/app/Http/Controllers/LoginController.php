@@ -22,9 +22,14 @@ class LoginController extends Controller
     	$user = DB::table('users')
                     ->where('email', $req->email)
                     ->where('password', $req->pass);
-
+                    // ->value('userid');
+		$data = DB::table('users')
+                    ->where('email', $req->email)
+                    ->value('userid');
     	if($user != null){
             $req->session()->put('mail', $req->email);
+            
+			$req->session()->put('id', $data);
     		return redirect()->route('home.index');
 
     	}else{
