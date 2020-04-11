@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Route::get('/login','LoginController@login');
 Route::post('/login','LoginController@check');
-Route::get('/home','HomeController@index')->name('home.index');
 Route::get('/system/supportstaff/add','LoginController@register')->name('login.register');
 Route::post('/system/supportstaff/add','LoginController@registerCheck')->name('login.registerCheck');
+
+Route::get('/home','HomeController@index')->name('home.index');
+Route::get('/system/BusSchedule','BusesSchedule@index')->name('BusesSchedule.index');
