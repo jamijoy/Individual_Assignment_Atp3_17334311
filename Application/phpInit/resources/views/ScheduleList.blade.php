@@ -33,8 +33,8 @@
 			<td>{{$arr->departure}}</td>
 			<td>{{$arr->arrival}}</td>
 			<td>
-				<a href="{{route('home.index', $arr->id)}}">Edit</a> || 
-				<a href="{{route('home.index', $arr->id)}}">Delete</a>
+				<a href="/system/busesshedule/{{$arr->id}}/edit">Edit</a> || 
+				<a href="/system/busesshedule/{{$arr->id}}/delete">Delete</a>
 			</td>
 		</tr>
 		@endforeach

@@ -22,3 +22,5 @@ Route::post('/system/supportstaff/add','LoginController@registerCheck')->name('l
 
 Route::get('/home','HomeController@index')->name('home.index');
 Route::get('/system/BusSchedule','BusesScheduleController@index')->name('BusesSchedule.index');
+Route::get('/system/busesshedule/{id}/edit','BusesScheduleController@Edit')->name('BusesSchedule.Edit');
+Route::post('/system/busesshedule/{id}/edit','BusesScheduleController@EditSave')->name('BusesSchedule.EditSave');
