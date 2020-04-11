@@ -5,7 +5,7 @@
 </head>
 <body>	
 
-	<h1>Bus Schedules</h1>&nbsp
+	<h1>Bus Schedules</h1>
 	<a href="{{route('home.index')}}">back</a> |
 	<a href="/logout">Logout</a> 
 
@@ -21,25 +21,26 @@
 			<th>DEPARTURE</th>
 			<th>ARRIVAL</th>
 		</tr>
-		
-		@foreach($schedules as $schedule)
+		@foreach($schedules as $arr)
 		<tr>
-			<td>{{$schedule['id']}}</td>
-			<td>{{$schedule['operator']}}</td>
-			<td>{{$schedule['manager']}}</td>
-			<td>{{$schedule['name']}}</td>
-			<td>{{$schedule['location']}}</td>
-			<td>{{$schedule['route']}}</td>
-			<td>{{$schedule['fare']}}</td>
-			<td>{{$schedule['departure']}}</td>
-			<td>{{$schedule['arrival']}}</td>
+			<td>{{$arr->id}}</td>
+			<td>{{$arr->operator}}</td>
+			<td>{{$arr->manager}}</td>
+			<td>{{$arr->name}}</td>
+			<td>{{$arr->location}}</td>
+			<td>{{$arr->route}}</td>
+			<td>{{$arr->fare}}</td>
+			<td>{{$arr->departure}}</td>
+			<td>{{$arr->arrival}}</td>
 			<td>
-				<a href="{{route('BusesSchedule.edit', $user['userId'])}}">Edit</a> || 
-				<a href="{{route('BusesSchedule.delete', $user['userId'])}}">Delete</a>
+				<a href="{{route('home.index', $arr->id)}}">Edit</a> || 
+				<a href="{{route('home.index', $arr->id)}}">Delete</a>
 			</td>
 		</tr>
 		@endforeach
 	</table>
+	
+	
 
 </body>
 </html>

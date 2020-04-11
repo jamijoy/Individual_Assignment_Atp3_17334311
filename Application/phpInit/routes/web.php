@@ -21,4 +21,4 @@ Route::get('/system/supportstaff/add','LoginController@register')->name('login.r
 Route::post('/system/supportstaff/add','LoginController@registerCheck')->name('login.registerCheck');
 
 Route::get('/home','HomeController@index')->name('home.index');
-Route::get('/system/BusSchedule','BusesSchedule@index')->name('BusesSchedule.index');
+Route::get('/system/BusSchedule','BusesScheduleController@index')->name('BusesSchedule.index');
