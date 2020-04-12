@@ -11,7 +11,8 @@
 			
 			// header('location:/home');
 			// window.location.replace("localhost:3000/home");
-			window.location.href = "/home";
+			// window.location.href = "/home";
+			window.location = "{url('/home')}";
 			
 		  } else {
 			window.location.replace("localhost:3000/home");
@@ -20,16 +21,21 @@
 	
 	function del2Func()
 	{
-		window.location.href = "/home";
+		// window.location.href = "/home";
+		// window.location = "{{url('/home')}}";
+		// window.location.href = "<?php echo URL::to('/home'); ?>";
+		window.location.replace("del.php");
+		
 	}
 </script>
 
 <body>	
 
 	<h1>Bus Schedules</h1>
-	<a href="{{route('home.index')}}">back</a> |
+	<a href="{{route('BusesSchedule.add')}}">Add A New Schedule</a> ||
+	<a href="{{route('home.index')}}">back</a> ||
 	<a href="/logout">Logout</a> 
-
+    <br/><br/>
 	<table border="1">
 		<tr>
 			<th>ID</th>

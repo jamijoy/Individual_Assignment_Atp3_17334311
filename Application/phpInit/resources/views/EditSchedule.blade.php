@@ -22,7 +22,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td>Username</td>
+				<td>NAME</td>
 				<td><input type="text" name="name" value="{{$data->name}}"></td>
 			</tr>
 			<tr>

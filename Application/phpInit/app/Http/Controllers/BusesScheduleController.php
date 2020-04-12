@@ -64,5 +64,66 @@ class BusesScheduleController extends Controller
 			return redirect()->route('BusesSchedule.index');
 		}
 	}
+	public function add(){
 	
+		return view('AddSchedule');
+	}
+	
+	public function insert(Request $req){
+    	
+		$Validation = Validator::make($req->all(), [
+			'name'=>'required',
+			'operator'=>'required',
+			'manager'=>'required',
+			'location'=>'required',
+			'route'=>'required',
+			'fare'=>'required',
+			'departure'=>'required',
+			'arrival'=>'required'
+		]);
+		
+		// $validation->validate();
+
+		if($Validation->fails()){
+			return back()
+					->with('errors', $Validation->errors())
+					->withInput();
+
+			// return redirect()->route('login.registerCheck')
+							// ->with('errors', $validation->errors())
+							// ->withInput();		
+		}
+
+		// $user 			= new User;
+		// $user->name 	= $req->name;
+		// $user->email    = $req->email;
+		// $user->password = $req->pass;
+		// $user->type 	= "manager";
+		// $user->userId 	= 3;
+		
+		$resp = DB::table('busesschedule')->insert([
+		'id'      => null,
+		'name'    => $req->name,
+		'operator'=> $req->operator,
+		'manager' => $req->manager,
+		'location'=> $req->location,
+		'route'   => $req->route,
+		'fare'    => $req->fare,
+		'departure'=>$req->departure,
+		'arrival' => $req->arrival
+		]);
+		
+		if(!$resp)
+		{
+			// $req->session()->flash('msg', 'Insertion Failed');
+    		return redirect('/system/busesshedule/add');
+		}
+		else
+		{
+			// $req->session()->flash('msg', 'Registered Account');
+    		return redirect('/system/BusSchedule');
+		}
+		
+		
+    }
 }
