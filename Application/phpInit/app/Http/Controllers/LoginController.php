@@ -21,7 +21,8 @@ class LoginController extends Controller
 	public function check(Request $req){
     	$user = DB::table('users')
                     ->where('email', $req->email)
-                    ->where('password', $req->pass);
+                    ->where('password', $req->pass)
+                    ->first();
                     // ->value('userid');
 		$data = DB::table('users')
                     ->where('email', $req->email)
@@ -34,7 +35,7 @@ class LoginController extends Controller
 
     	}else{
             $req->session()->flash('msg', 'invalid username/password');
-    		return redirect('/login');
+    		return redirect('/system/supportstaff/login');
     	}
     }
 	
@@ -86,12 +87,14 @@ class LoginController extends Controller
 		if(!$resp)
 		{
 			$req->session()->flash('msg', 'Registration Failed');
-    		return redirect('/login');
+    		return redirect('/system/register');
 		}
 		else
 		{
 			$req->session()->flash('msg', 'Registered Account');
-    		return redirect('/login');
+    		return redirect('/system/supportstaff/login');
+    		// return redirect()->route('Login.login')->withInput();
+    		// return redirect->to('Login.login')->withInput();
 		}
 		
 		

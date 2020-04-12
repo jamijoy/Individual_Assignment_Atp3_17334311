@@ -70,7 +70,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="/login">Login</a> || 
+                    <a href="/system/supportstaff/login">Login</a> || 
                     <a href="/about">About Us</a>
                 </div>
             </div>

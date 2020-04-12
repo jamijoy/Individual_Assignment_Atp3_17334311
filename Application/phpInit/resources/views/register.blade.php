@@ -6,7 +6,7 @@
 <body>	
 
 	<h1>Register Manager</h1>&nbsp
-	<a href="/login">Back to login</a> <br>
+	<a href="/system/supportstaff/login">Back to login</a> <br>
 
 	<form method="post">
 		{{csrf_field()}}

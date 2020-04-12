@@ -15,10 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login','LoginController@login');
-Route::post('/login','LoginController@check');
-Route::get('/system/supportstaff/add','LoginController@register')->name('login.register');
-Route::post('/system/supportstaff/add','LoginController@registerCheck')->name('login.registerCheck');
+Route::get('/system/supportstaff/login','LoginController@login');
+Route::post('/system/supportstaff/login','LoginController@check');
+Route::get('/system/register','LoginController@register')->name('login.register');
+Route::post('/system/register','LoginController@registerCheck')->name('login.registerCheck');
 
 Route::get('/home','HomeController@index')->name('home.index');
 Route::get('/system/BusSchedule','BusesScheduleController@index')->name('BusesSchedule.index');

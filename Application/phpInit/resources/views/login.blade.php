@@ -14,7 +14,7 @@
 		<input type="submit" name="submit" value="Submit" >
 	</form>
 	
-	<a href="/system/supportstaff/add">Regsiter Manager<a>
+	<a href="/system/register">Regsiter Manager<a>
 	
 </body>
 </html>

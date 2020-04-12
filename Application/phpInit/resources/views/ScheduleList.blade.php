@@ -5,31 +5,14 @@
 </head>
 
 <script>
-	function delFunc()
+	function delFunc(id)
 	{
+		var id = id;
 		if (confirm("Delete This Bus Schedule ? \nSure Sir ?\n")) {
-			
-			// header('location:/home');
-			// window.location.replace("localhost:3000/home");
-			// window.location.href = "/home";
-			window.location = "{url('/home')}";
-			
+			var link = "/system/busesshedule/"+id+"/Delete";
+			window.location.replace(link);		
 		  } else {
-			window.location.replace("localhost:3000/home");
 		  }
-	}
-	
-	function del2Func()
-	{
-		
-		if (confirm("Delete This Bus Schedule ? \nSure Sir ?\n")) {
-			
-			window.location.replace("/home");
-			
-		  } else {
-			window.location.replace("/login");
-		  }
-		
 	}
 </script>
 
@@ -65,9 +48,7 @@
 			<td>{{$arr->arrival}}</td>
 			<td>
 				<a href="/system/busesshedule/{{$arr->id}}/edit">Edit</a> || 
-				<a href="/system/busesshedule/{{$arr->id}}/Delete">Delete</a> ||
-				<!--<a  href="">Delete button</a>-->
-				<button onclick="del2Func()"> do</button>
+				<button onclick="delFunc({{$arr->id}})"> Delete</button>
 			</td>
 		</tr>
 		@endforeach

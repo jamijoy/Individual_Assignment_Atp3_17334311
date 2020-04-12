@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2020 at 06:31 PM
+-- Generation Time: Apr 12, 2020 at 09:21 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -47,7 +47,34 @@ INSERT INTO `booking` (`id`, `busid`, `ticketno`, `fare`, `time`) VALUES
 (4, 3, 2, 1200, 'February'),
 (5, 4, 10, 5000, 'February'),
 (6, 4, 12, 9500, 'March'),
-(7, 5, 10, 6000, 'March');
+(7, 5, 10, 6000, 'March'),
+(8, 2, 5, 4500, 'April'),
+(9, 5, 10, 6000, 'April'),
+(10, 6, 3, 1500, 'April'),
+(11, 7, 8, 7800, 'April'),
+(12, 4, 2, 1200, 'May'),
+(13, 5, 3, 1700, 'May'),
+(14, 2, 2, 800, 'June'),
+(15, 4, 2, 1300, 'June'),
+(16, 5, 1, 1500, 'June'),
+(17, 6, 2, 1200, 'June'),
+(18, 2, 5, 4500, 'August'),
+(19, 5, 10, 3800, 'August'),
+(20, 6, 3, 1800, 'September'),
+(21, 7, 2, 2600, 'September'),
+(22, 2, 3, 4500, 'October'),
+(23, 7, 10, 8000, 'October'),
+(24, 2, 5, 3000, 'October'),
+(25, 6, 10, 7800, 'October'),
+(26, 6, 5, 6500, 'November'),
+(27, 7, 5, 6500, 'November'),
+(28, 4, 8, 12500, 'November'),
+(29, 2, 2, 2000, 'December'),
+(30, 7, 10, 7000, 'December'),
+(31, 10, 5, 2500, 'January'),
+(32, 15, 5, 5000, 'January'),
+(33, 18, 12, 30100, 'February'),
+(34, 13, 2, 1400, 'February');
 
 -- --------------------------------------------------------
 
@@ -76,7 +103,18 @@ INSERT INTO `busesschedule` (`id`, `operator`, `manager`, `name`, `location`, `r
 (4, 'GreenLine ltd.', 'Ratan', 'Green Line Night AC', 'Dhaka', 'Dhaka-Chittagong', 1250, 22, 11),
 (5, 'GreenLine ltd.', 'Ratan', 'Green Line Day AC', 'Dhaka', 'Dhaka-Chittagong', 1100, 8, 18),
 (6, 'GreenLine ltd.', 'Ratan', 'Green Line Hino Coach', 'Dhaka', 'Dhaka-Chittagong', 380, 16, 2),
-(7, 'Ena Paribahan', 'Ratan', 'Ena Trans Day-Couch', 'Dhaka', 'Dhaka-Chittagong', 320, 16, 22);
+(7, 'Ena Paribahan', 'Ratan', 'Ena Trans Day-Couch', 'Dhaka', 'Dhaka-Chittagong', 320, 16, 22),
+(9, 'Nabil Paribahan', 'kalam', 'Nabil Classic Non AC', 'Rangpur', 'Rangpur-Dhaka', 500, 16, 3),
+(10, 'Hanif Enterprise', 'barkat', 'Hanif Volvo', 'Rangpur', 'Rangpur-Dhaka', 1250, 16, 3),
+(11, 'SR Travels', 'barkat', 'SR Non AC Hino', 'Rangpur', 'Rangpur-Dhaka', 500, 10, 20),
+(12, 'Agomoni Paribahan', 'masumBillah', 'Agomoni Hino AC', 'Rangpur', 'Rangpur-Dhaka', 750, 10, 20),
+(13, 'Shyamoli Paribahan', 'jabbar', 'Shyamoli Day AC-Hino', 'Rangpur', 'Rangpur-Dhaka', 750, 10, 20),
+(14, 'Shyamoli Paribahan', 'jabbar', 'Shyamoli Scania', 'Rangpur', 'Rangpur-Dhaka', 1250, 15, 0),
+(15, 'SR Travels', 'kalam', 'SR Scania', 'Rangpur', 'Rangpur-Dhaka', 1250, 23, 8),
+(16, 'Hanif Enterprise', 'barkat', 'Hanif Scania', 'Rangpur', 'Rangpur-Dhaka', 1250, 17, 13),
+(17, 'Agomoni Paribahan', 'masumBillah', 'Agomoni Scania', 'Rangpur', 'Rangpur-Dhaka', 1200, 14, 11),
+(18, 'Nabil Paribahan', 'jabbar', 'Nabil Scania', 'Rangpur', 'Rangpur-Dhaka', 1250, 8, 6),
+(19, 'Ena Paribahan', 'Ratan', 'Ena AC Hino-Chair', 'Rangpur', 'Rangpur-Dhaka', 750, 17, 13);
 
 -- --------------------------------------------------------
 
@@ -97,7 +135,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`name`, `email`, `password`, `type`, `userid`) VALUES
-('Jami Joy', 'admin@countermanagement.com', 'asd', 'admin', 1),
+('Jami Joy', 'admin@countermanager.com', 'asd', 'admin', 1),
 ('Azad Rahim st', 'azad@gmail.com', 'asd', 'manager', 2),
 ('sachi', 'sahabipro96@gmail.com', 'asd', 'manager', 3),
 ('mina', 'mina@gmail.com', 'asdf', 'manager', 4),
@@ -106,7 +144,18 @@ INSERT INTO `users` (`name`, `email`, `password`, `type`, `userid`) VALUES
 ('sedranMahhla', 'sederanmehta777@gmail.com', 'asd', 'manager', 7),
 ('asman Chawdhury', 'asman7@gmial.com', 'asd', 'manager', 8),
 ('mina razu', 'mina.razu1998@gmail.com', 'asda', 'manager', 9),
-('Kalam', 'kalam@gmail.com', 'asd', 'manager', 10);
+('Kalam', 'kalam@gmail.com', 'asd', 'manager', 10),
+('jabbar', 'jabbar@gmail.yahoo', 'asd', 'manager', 11),
+('barkat', 'barkat@gmail.yahoo', 'asd', 'manager', 12),
+('barkat22', 'barkat22@gmail.yahoo', 'asd', 'manager', 13),
+('malangChand', 'malangChand@vo.vo', 'asd', 'manager', 14),
+('malangChand22', 'malangChand22@vo.vo', 'asd', 'manager', 15),
+('malangChand222', 'malangChand222@vo.vo', 'asd', 'manager', 16),
+('sata45', 'sata45@sata45.com', 'asd', 'manager', 17),
+('rahatga', 'rahatga@gm.vo', 'asd', 'manager', 18),
+('ASDASDaDa', 'ASDASDaDa@ASDASDaDa.com', 'asd', 'manager', 19),
+('masumBillah', 'masumBillah@gmail.com', 'asd', 'manager', 20),
+('masumBillah2', 'Billah@gmail.com', 'asd', 'manager', 21);
 
 --
 -- Indexes for dumped tables
@@ -138,19 +187,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `busesschedule`
 --
 ALTER TABLE `busesschedule`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `userid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -10,7 +10,7 @@
 	<a href="/system/profile/{{session('id')}}/profile">Profile<a> || 
 	<a href="/system/BusSchedule">Bus Schedule<a> || 
 	<a href="/system/bussummary">Report / Summary<a> || 
-	<a href="/system/supportstaff/add">Regsiter Manager<a> || 
+	<a href="/system/register">Regsiter Manager<a> || 
 	<a href="/logout">Logout<a>
 	
 </body>
