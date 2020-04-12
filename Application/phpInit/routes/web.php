@@ -34,5 +34,6 @@ Route::get('/system/profile/{id}/edit','ProfileController@Edit')->name('Profile.
 Route::post('/system/profile/{id}/edit','ProfileController@EditSave')->name('Profile.EditSave');
 
 Route::get('/system/bussummary','SummaryController@index')->name('Summary.index');
+Route::get('/system/bussummary/Search/{mon}','SummaryController@Search')->name('Summary.Search');
 
 Route::get('/logout','LogoutController@index')->name('logout.index');

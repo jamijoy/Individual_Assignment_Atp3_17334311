@@ -21,10 +21,11 @@
 	
 	function del2Func()
 	{
+		alert("haay");
 		// window.location.href = "/home";
-		// window.location = "{{url('/home')}}";
+		window.location = "{{url('http://localhost:3000/home')}}";
 		// window.location.href = "<?php echo URL::to('/home'); ?>";
-		window.location.replace("del.php");
+		// window.location.replace("del.php");
 		
 	}
 </script>
@@ -68,11 +69,11 @@
 		@endforeach
 	</table>
 	
-	<div id="delDiv">
+	<!--<div id="delDiv">
 		<p>Are you sure want to delete this ?
 		</p>
 		
-	</div>
+	</div>-->
 
 </body>
 </html>
