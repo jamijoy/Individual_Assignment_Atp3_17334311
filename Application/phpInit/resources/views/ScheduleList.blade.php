@@ -21,11 +21,14 @@
 	
 	function del2Func()
 	{
-		alert("haay");
-		// window.location.href = "/home";
-		window.location = "{{url('http://localhost:3000/home')}}";
-		// window.location.href = "<?php echo URL::to('/home'); ?>";
-		// window.location.replace("del.php");
+		
+		if (confirm("Delete This Bus Schedule ? \nSure Sir ?\n")) {
+			
+			window.location.replace("/home");
+			
+		  } else {
+			window.location.replace("/login");
+		  }
 		
 	}
 </script>
@@ -63,7 +66,8 @@
 			<td>
 				<a href="/system/busesshedule/{{$arr->id}}/edit">Edit</a> || 
 				<a href="/system/busesshedule/{{$arr->id}}/Delete">Delete</a> ||
-				<a onclick="del2Func()" href="">Delete button</a>
+				<!--<a  href="">Delete button</a>-->
+				<button onclick="del2Func()"> do</button>
 			</td>
 		</tr>
 		@endforeach
