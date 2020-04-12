@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Edit Profile page</title>
+	<link href="{{ asset('css/design.css') }}" rel="stylesheet">
 </head>
 <body>	
 

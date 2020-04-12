@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Home Page</title>
+	<link href="{{ asset('css/design.css') }}" rel="stylesheet">
 </head>
 <body>
 	<h1>Home Page</h1>

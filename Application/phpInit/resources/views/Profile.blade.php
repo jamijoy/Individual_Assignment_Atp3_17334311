@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Pofile Page</title>
+	<link href="{{ asset('css/design.css') }}" rel="stylesheet">
 </head>
 <body>	
 	<h1>Bus Schedules</h1>

@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Bus Schedule Page</title>
+	<link href="{{ asset('css/design.css') }}" rel="stylesheet">
 </head>
 
 <script>
@@ -47,7 +48,7 @@
 			<td>{{$arr->departure}}</td>
 			<td>{{$arr->arrival}}</td>
 			<td>
-				<a href="/system/busesshedule/{{$arr->id}}/edit">Edit</a> || 
+				<a href="/system/busesshedule/{{$arr->id}}/edit">Edit</a>
 				<button onclick="delFunc({{$arr->id}})"> Delete</button>
 			</td>
 		</tr>
