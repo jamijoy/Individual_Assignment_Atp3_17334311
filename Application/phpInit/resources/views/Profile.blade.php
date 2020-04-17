@@ -5,10 +5,12 @@
 	<link href="{{ asset('css/design.css') }}" rel="stylesheet">
 </head>
 <body>	
+	<div class="formDiv">
 	<h1>Bus Schedules</h1>
 	<a href="{{route('home.index')}}">back</a> |
 	<a href="/logout">Logout</a> 
-
+	</div>
+	<center><br/><br/><br/>
 	<table border="1">
 		<tr>
 			<th>NAME</th>
@@ -26,6 +28,6 @@
 		</tr>
 		
 	</table>
-
+	</center>
 </body>
 </html>

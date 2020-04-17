@@ -73,7 +73,7 @@ tr:nth-child(odd) {
 }
 
 .formDiv {
-    width:50%;
+    width:90%;
     padding:30px;
     border:2px black solid;
     border-radius:10px;

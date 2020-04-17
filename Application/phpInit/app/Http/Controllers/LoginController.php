@@ -28,10 +28,11 @@ class LoginController extends Controller
                     ->where('email', $req->email)
                     ->value('userid');
     	if($user != null){
-            $req->session()->put('mail', $req->email);
             
+            $req->session()->put('mail', $req->email);
 			$req->session()->put('id', $data);
-    		return redirect()->route('home.index');
+    		
+			return redirect()->route('home.index');
 
     	}else{
             $req->session()->flash('msg', 'invalid username/password');

@@ -5,23 +5,19 @@
 	<link href="{{ asset('css/design.css') }}" rel="stylesheet">
 </head>
 <body>	
-
+	<div class="formDiv">
 	<h1>Create New Bus Schedule</h1>&nbsp
 	<a href="{{route('home.index')}}">Back To Home</a> |
 	<a href="{{route('BusesSchedule.index')}}">Back To List</a> |
 	<a href="/logout">Logout</a> <br>
-
+	</div><br/><br/>
+	<center>
 	<form method="post">
 		{{csrf_field()}}
-		<table>
-			<tr>
-				<td></td>
-				<td>
-				@foreach($errors->all() as $err)
+		@foreach($errors->all() as $err)
 					{{$err}} <br>
 				@endforeach
-				</td>
-			</tr>
+		<table>
 			<tr>
 				<td>NAME</td>
 				<td><input type="text" name="name" Placeholder="Enter Name Here"></td>
@@ -60,5 +56,6 @@
 			</tr>
 		</table>
 	</form>
+	</center>
 </body>
 </html>

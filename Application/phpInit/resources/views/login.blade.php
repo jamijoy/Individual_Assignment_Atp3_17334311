@@ -2,13 +2,23 @@
 <html>
 <head>
 	<title>Login Page</title>
-	<link href="{{ asset('css/design.css') }}" rel="stylesheet">
 </head>
+<style>
+	.loginDiv{
+		width:50%;
+		padding:30px;
+		border:2px black solid;
+		border-radius:10px;
+		background-color:transparent;
+	}
+</style>
 <body>
+	<center>
+	<div class="loginDiv" style="margin-top:100px;">
 	<h1>Login Page</h1>
 	<h3>{{session('msg')}}</h3>
 	
-	<form method="post" >
+		<form method="post" >
 		@csrf
 		<table>
 			<tr>
@@ -40,5 +50,7 @@
 	
 	<a href="/system/register">Regsiter Manager<a>
 	
+	</div>
+	</center>
 </body>
 </html>

@@ -4,32 +4,46 @@
 	<title>Report Page</title>
 	<link href="{{ asset('css/design.css') }}" rel="stylesheet">
 </head>
+<script>
+	function selectFunc()
+	{
+		var selected = document.getElementById("mon").value;
+		var link = "/system/bussummary/Search/"+selected;
+		window.location.replace(link);
+	}
+</script>
 <body>	
 
+	<div class="formDiv">
 	<h1>Bus Summary/Details</h1>
 	<a href="{{route('home.index')}}">back to home</a> |
 	<a href="/logout">Logout</a> 
-	<br/><br/>
+	<br/>
+	</div>
+	<br/>
 	Select a Month 
-	&nbsp <a href="{{route('Summary.Search','January')}}">January</a>
-	&nbsp <a href="{{route('Summary.Search','February')}}">February</a>
-	&nbsp <a href="{{route('Summary.Search','March')}}">March</a>
-	&nbsp <a href="{{route('Summary.Search','April')}}">April</a>
-	&nbsp <a href="{{route('Summary.Search','May')}}">May</a>
-	&nbsp <a href="{{route('Summary.Search','June')}}">June</a>
-	&nbsp <a href="{{route('Summary.Search','July')}}">July</a>
-	&nbsp <a href="{{route('Summary.Search','August')}}">August</a>
-	&nbsp <a href="{{route('Summary.Search','September')}}">September</a>
-	&nbsp <a href="{{route('Summary.Search','October')}}">October</a>
-	&nbsp <a href="{{route('Summary.Search','November')}}">November</a>
-	&nbsp <a href="{{route('Summary.Search','December')}}">December</a>
-	<br/><br/>
+	<select id="mon" onchange="selectFunc()">
+		<option value="Select" hidden>Select A Month</option>
+		<option value="January">January</option>
+		<option value="February">February</option>
+		<option value="March">March</option>
+		<option value="April">April</option>
+		<option value="May">May</option>
+		<option value="June">June</option>
+		<option value="July">July</option>
+		<option value="August">August</option>
+		<option value="September">September</option>
+		<option value="October">October</option>
+		<option value="November">November</option>
+		<option value="December">December</option>
+	</select>
+	<br/><br/><br/>
 	<table border="1">
 		<tr>
 			<th>NAME</th>
 			<th>ROUTE</th>
 			<th>OPERATOR</th>
-			<th>AMOUNT</th>
+			<th>TICKET PRICE</th>
 			<th>BOOKED TICKET</th>
 		</tr>
 		@foreach($schedules as $arr)

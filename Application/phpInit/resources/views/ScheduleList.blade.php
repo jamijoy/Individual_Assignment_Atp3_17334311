@@ -18,13 +18,15 @@
 </script>
 
 <body>	
-
+	<div class="formDiv">
 	<h1>Bus Schedules</h1>
 	<a href="{{route('BusesSchedule.add')}}">Add A New Schedule</a> ||
 	<a href="{{route('home.index')}}">back</a> ||
 	<a href="/logout">Logout</a> 
-    <br/><br/>
-	<table border="1">
+    <br/>
+	</div>
+	<br/>
+	<table style="width:100%">
 		<tr>
 			<th>ID</th>
 			<th>OPERATOR NAME</th>
