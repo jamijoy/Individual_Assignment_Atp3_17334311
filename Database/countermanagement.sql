@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2020 at 09:21 PM
+-- Generation Time: May 13, 2020 at 05:29 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -74,7 +74,36 @@ INSERT INTO `booking` (`id`, `busid`, `ticketno`, `fare`, `time`) VALUES
 (31, 10, 5, 2500, 'January'),
 (32, 15, 5, 5000, 'January'),
 (33, 18, 12, 30100, 'February'),
-(34, 13, 2, 1400, 'February');
+(34, 13, 2, 1400, 'February'),
+(35, 17, 4, 6500, 'May'),
+(36, 16, 3, 1600, 'May'),
+(37, 15, 2, 3200, 'May'),
+(38, 5, 4, 6500, 'February'),
+(39, 5, 4, 6500, 'February'),
+(40, 6, 2, 4000, 'February'),
+(41, 5, 4, 6500, 'February'),
+(42, 5, 4, 6500, 'March'),
+(43, 5, 4, 6500, 'March'),
+(44, 5, 4, 6500, 'April'),
+(45, 5, 4, 6500, 'April'),
+(46, 5, 4, 6500, 'May'),
+(47, 5, 4, 6500, 'June'),
+(48, 5, 4, 6500, 'July'),
+(49, 5, 4, 6500, 'July'),
+(50, 18, 3, 5500, 'July'),
+(51, 5, 4, 4444, 'August'),
+(52, 5, 4, 4444, 'August'),
+(53, 5, 4, 4444, 'September'),
+(54, 5, 4, 4444, 'September'),
+(55, 5, 4, 4444, 'October'),
+(56, 5, 4, 4444, 'October'),
+(57, 5, 4, 4444, 'November'),
+(58, 5, 4, 4444, 'November'),
+(59, 5, 4, 4444, 'November'),
+(60, 5, 4, 4444, 'December'),
+(61, 5, 4, 4444, 'December'),
+(62, 2, 3, 1600, 'December'),
+(63, 2, 3, 1600, 'December');
 
 -- --------------------------------------------------------
 
@@ -187,7 +216,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `busesschedule`

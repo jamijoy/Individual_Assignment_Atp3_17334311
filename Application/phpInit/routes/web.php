@@ -31,6 +31,8 @@ Route::group(['middleware'=>['sess']],function(){
 	Route::post('/system/busesshedule/new','BusesScheduleController@insert')->name('BusesSchedule.insert');
 
 	Route::get('/system/busesshedule/{id}/Delete','BusesScheduleController@Delete')->name('BusesSchedule.Delete');
+	
+	Route::post('/searchBy','HomeController@searchBy')->name('home.searchBy');
 
 	Route::get('/system/profile/{id}/profile','ProfileController@index')->name('Profile.index');
 	Route::get('/system/profile/{id}/edit','ProfileController@Edit')->name('Profile.Edit');

@@ -3,6 +3,9 @@
 <head>
 	<title>Home Page</title>
 	<link href="{{ asset('css/design.css') }}" rel="stylesheet">
+	<script src="{{ asset('js/jquery-3.4.1.js') }}"></script>
+	<script src="{{ asset('js/myScript.js') }}"></script>
+	
 </head>
 <style>
 	#bookingForm{
@@ -16,7 +19,7 @@
 	
 	<h1>Home Page</h1>
 	<h3>{{session('mail')}}</h3>
-	
+	<button onclick="barOpen()" id="navBtn" style="border:1px dashed black;" class="btn"> &#9776; Search </button> 
 	<a href="/system/profile/{{session('id')}}/profile">Profile<a> || 
 	<a href="/system/BusSchedule">Bus Schedule<a> || 
 	<a href="/system/bussummary">Report / Summary<a> || 
@@ -24,6 +27,15 @@
 	<a href="/logout">Logout<a>
 	</div>
 	</center>
+	
+	<div class="sidebar shadow animate-left" id="sideBar">
+		
+			<input class="searcherBox" id="searcherBox" type="text" placeholder="Enter keyword to search..." onkeyup="srcFunc('{{csrf_token()}}')"> <button style="font-weight: bold; float:right;" onclick="barClose()" class="btn"> &#10060 </button>
+		<br/>
+			<p class="baritem">Search Results:<hr width="95%"></p>
+			<div id="searchList"></div>
+			
+	</div>
 	
 	<div style="text-align:right;float:left;margin-top:100px;margin-left:500px;">
 		Select a Coach : &nbsp <br/><br/>

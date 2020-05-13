@@ -5,7 +5,16 @@
 input[type=text],[type=phone],[type=email],[type=password],[type=date],[type=textarea],[type=submit],[type=file],select {
 	padding:5px;
 	border-radius:5px;
-    background-color:aquamarine;
+    background-color:transparent;
+}
+
+.searcherBox{
+	padding:10px;
+	border-radius:5px;
+    background-color:lime;
+	color:white;
+	width:100%;
+	border:2px white solid;
 }
 
 .header{
@@ -78,4 +87,22 @@ tr:nth-child(odd) {
     border:2px black solid;
     border-radius:10px;
     background-color:transparent;
+}
+
+.sidebar {
+  height:100%;
+  width:26%;
+  top:0;
+  left:0;
+  display:none;
+  background-color:rgba(84,84,122,0.9);
+  position:fixed! important;
+  z-index:1;
+  padding: 25px;
+  overflow:auto;
+  margin-left:0px;
+}
+
+.baritem{
+	color:white;
 }

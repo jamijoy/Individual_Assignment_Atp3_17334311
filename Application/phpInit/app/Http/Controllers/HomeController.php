@@ -44,4 +44,17 @@ class HomeController extends Controller
 			return redirect('/system/bussummary/Search/'.$req->mon);
 		}
     }
+	
+	public function searchBy(Request $req){
+		
+		$schedules = DB::table('busesschedule')->where('name','like','%'.$req->keyword.'%')->get();
+		$msg = "";
+		foreach($schedules as $arr)
+		{
+			$mg = "<p class='baritem'><a href='/system/busesshedule/".$arr->id."/edit'>".$arr->name."(".$arr->operator.")</a><hr width='95%'></p>";
+			$msg = $msg.$mg;
+		}
+		
+		return response()->json(array('msg'=> $msg), 200);
+    }
 }
